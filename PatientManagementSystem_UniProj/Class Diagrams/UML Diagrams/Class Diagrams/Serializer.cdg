@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Serializer">
+  <ClassDiagramComponents>
+    <Class name="Serializer" package="Serializer" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="serializeObject" returnType="void" visibility="public" isStatic="true">
+          <Argument type="Serializable" name="object"/>
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="deserializeObject" returnType="Object" visibility="public" isStatic="true">
+          <Argument type="String" name="name"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

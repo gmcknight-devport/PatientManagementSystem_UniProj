@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="AdminStrategy" package="LoginStrategiesModel" visibility="public" isFinal="true" xPosition="35.0" yPosition="353.0">
+      <Fields>
+        <Field name="controller" type="AdministratorController" visibility="private"/>
+        <Field name="view" type="AdminGUI" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="loadUser" returnType="void" visibility="public"/>
+        <Method name="setController" returnType="void" visibility="public"/>
+        <Method name="setModel" returnType="void" visibility="public"/>
+        <Method name="setView" returnType="void" visibility="public"/>
+        <Method name="addUpdateObserver" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="DoctorStrategy" package="LoginStrategiesModel" visibility="public" isFinal="true" xPosition="583.0" yPosition="386.0">
+      <Fields>
+        <Field name="controller" type="DoctorController" visibility="private"/>
+        <Field name="view" type="DoctorGUI" visibility="private"/>
+        <Field name="userModel" type="UserFacade" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="loadUser" returnType="void" visibility="public"/>
+        <Method name="setController" returnType="void" visibility="public"/>
+        <Method name="setModel" returnType="void" visibility="public"/>
+        <Method name="setView" returnType="void" visibility="public"/>
+        <Method name="addUpdateObserver" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="LoggedOutStrategy" package="LoginStrategiesModel" visibility="public" isFinal="true" xPosition="1206.0" yPosition="386.0">
+      <Fields>
+        <Field name="controller" type="LoginController" visibility="private"/>
+        <Field name="view" type="LoginGUI" visibility="private"/>
+        <Field name="userModel" type="UserFacade" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="loadUser" returnType="void" visibility="public"/>
+        <Method name="setController" returnType="void" visibility="public"/>
+        <Method name="setModel" returnType="void" visibility="public"/>
+        <Method name="setView" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PatientStrategy" package="LoginStrategiesModel" visibility="public" isFinal="true" xPosition="1548.0" yPosition="343.0">
+      <Fields>
+        <Field name="controller" type="PatientController" visibility="private"/>
+        <Field name="view" type="PatientGUI" visibility="private"/>
+        <Field name="userModel" type="UserFacade" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="loadUser" returnType="void" visibility="public"/>
+        <Method name="setController" returnType="void" visibility="public"/>
+        <Method name="setModel" returnType="void" visibility="public"/>
+        <Method name="setView" returnType="void" visibility="public"/>
+        <Method name="addUpdateObserver" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="SecretaryStrategy" package="LoginStrategiesModel" visibility="public" isFinal="true" xPosition="1881.0" yPosition="357.0">
+      <Fields>
+        <Field name="controller" type="SecretaryController" visibility="private"/>
+        <Field name="view" type="SecretaryGUI" visibility="private"/>
+        <Field name="userModel" type="UserFacade" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="loadUser" returnType="void" visibility="public"/>
+        <Method name="setController" returnType="void" visibility="public"/>
+        <Method name="setModel" returnType="void" visibility="public"/>
+        <Method name="setView" returnType="void" visibility="public"/>
+        <Method name="addUpdateObserver" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="StrategySelect" package="LoginStrategiesModel" visibility="public" xPosition="844.0" yPosition="509.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="selectStrategy" returnType="ILoginStrategy" visibility="public">
+          <Argument type="String" name="userType"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="SecretaryController" package="Controllers" visibility="public" xPosition="2000.0" yPosition="671.0">
+      <Fields>
+        <Field name="secretaryControllerInstance" type="SecretaryController" visibility="private" isStatic="true" isTransient="true"/>
+        <Field name="view" type="SecretaryGUI" visibility="private"/>
+        <Field name="userModel" type="UserFacade" visibility="private"/>
+        <Field name="servicesModel" type="ServicesFacade" visibility="private"/>
+        <Field name="strategy" type="StrategySelect" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="SecretaryController" visibility="public" isStatic="true"/>
+        <Method name="setView" returnType="void" visibility="public">
+          <Argument type="SecretaryGUI" name="view"/>
+        </Method>
+        <Method name="setModel" returnType="void" visibility="public"/>
+        <Method name="disposeView" returnType="void" visibility="public"/>
+        <Method name="hasView" returnType="boolean" visibility="public"/>
+        <Method name="addButtonHandler" returnType="void" visibility="public"/>
+        <Method name="addWindowCloseHandler" returnType="void" visibility="public"/>
+        <Method name="setLogoutHandler" returnType="void" visibility="public"/>
+        <Method name="setStrategy" returnType="void" visibility="public"/>
+        <Method name="setCreationRequests" returnType="void" visibility="private"/>
+        <Method name="setDeleteCombo" returnType="void" visibility="private"/>
+        <Method name="setSecInfo" returnType="void" visibility="private"/>
+        <Method name="setSecMessages" returnType="void" visibility="private"/>
+        <Method name="setAppointmentApprovalRequests" returnType="void" visibility="private"/>
+        <Method name="setAppointmentDateFormat" returnType="void" visibility="private"/>
+        <Method name="setAppointmentTimes" returnType="void" visibility="private"/>
+        <Method name="setAppointmentDoctorIDs" returnType="void" visibility="private"/>
+        <Method name="setAppointmentPatientIDs" returnType="void" visibility="private"/>
+        <Method name="setDeleteAppointmentList" returnType="void" visibility="private"/>
+        <Method name="setMedicinesJList" returnType="void" visibility="private"/>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="errorMessage"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PatientController" package="Controllers" visibility="public" xPosition="1446.0" yPosition="822.0">
+      <Fields>
+        <Field name="patientControllerInstance" type="PatientController" visibility="private" isStatic="true" isTransient="true"/>
+        <Field name="view" type="PatientGUI" visibility="private"/>
+        <Field name="userModel" type="UserFacade" visibility="private"/>
+        <Field name="servicesModel" type="ServicesFacade" visibility="private"/>
+        <Field name="appointmentModel" type="ServicesFacade" visibility="private" isFinal="true"/>
+        <Field name="strategy" type="StrategySelect" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="PatientController" visibility="public" isStatic="true"/>
+        <Method name="setView" returnType="void" visibility="public">
+          <Argument type="PatientGUI" name="view"/>
+        </Method>
+        <Method name="setModel" returnType="void" visibility="public"/>
+        <Method name="disposeView" returnType="void" visibility="public"/>
+        <Method name="hasView" returnType="boolean" visibility="public"/>
+        <Method name="addButtonHandler" returnType="void" visibility="public"/>
+        <Method name="addWindowCloseHandler" returnType="void" visibility="public"/>
+        <Method name="setLogoutHandler" returnType="void" visibility="public"/>
+        <Method name="setStrategy" returnType="void" visibility="public"/>
+        <Method name="setPatientInfo" returnType="void" visibility="private"/>
+        <Method name="setPatientMessages" returnType="void" visibility="private"/>
+        <Method name="setPatientCurrPrescription" returnType="void" visibility="private"/>
+        <Method name="setPatientAppointment" returnType="void" visibility="private"/>
+        <Method name="setAppointmentDateFormat" returnType="void" visibility="private"/>
+        <Method name="setAppointmentTimes" returnType="void" visibility="private"/>
+        <Method name="setAppointmentDoctorIDs" returnType="void" visibility="private"/>
+        <Method name="setRatedDoctors" returnType="void" visibility="private"/>
+        <Method name="setAppointmentHistory" returnType="void" visibility="public"/>
+        <Method name="setPrescriptionHistory" returnType="void" visibility="public"/>
+        <Method name="setNotesHistory" returnType="void" visibility="public"/>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="errorMessage"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="DoctorController" package="Controllers" visibility="public" xPosition="583.0" yPosition="910.0">
+      <Fields>
+        <Field name="doctorControllerInstance" type="DoctorController" visibility="private" isStatic="true" isTransient="true"/>
+        <Field name="view" type="DoctorGUI" visibility="private"/>
+        <Field name="userModel" type="UserFacade" visibility="private"/>
+        <Field name="servicesModel" type="ServicesFacade" visibility="private"/>
+        <Field name="strategy" type="StrategySelect" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="DoctorController" visibility="public" isStatic="true"/>
+        <Method name="setView" returnType="void" visibility="public">
+          <Argument type="DoctorGUI" name="view"/>
+        </Method>
+        <Method name="setModel" returnType="void" visibility="public"/>
+        <Method name="disposeView" returnType="void" visibility="public"/>
+        <Method name="hasView" returnType="boolean" visibility="public"/>
+        <Method name="addButtonHandler" returnType="void" visibility="public"/>
+        <Method name="addWindowCloseHandler" returnType="void" visibility="public"/>
+        <Method name="setLogoutHandler" returnType="void" visibility="public"/>
+        <Method name="setStrategy" returnType="void" visibility="public"/>
+        <Method name="setDoctorInfo" returnType="void" visibility="private"/>
+        <Method name="setDoctorMessages" returnType="void" visibility="private"/>
+        <Method name="setDoctorAppointments" returnType="void" visibility="private"/>
+        <Method name="setAppointmentDateFormat" returnType="void" visibility="private"/>
+        <Method name="setAppointmentTimes" returnType="void" visibility="private"/>
+        <Method name="setAppointmentPatientIDs" returnType="void" visibility="private"/>
+        <Method name="setPatientCombo" returnType="void" visibility="private"/>
+        <Method name="setPatientHistory" returnType="void" visibility="private"/>
+        <Method name="setPrescriptionHistory" returnType="void" visibility="private"/>
+        <Method name="setMedicinesJList" returnType="void" visibility="private"/>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="errorMessage"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AdministratorController" package="Controllers" visibility="public" xPosition="-9.0" yPosition="807.0">
+      <Fields>
+        <Field name="adminControllerInstance" type="AdministratorController" visibility="private" isStatic="true" isTransient="true"/>
+        <Field name="userModel" type="UserFacade" visibility="private"/>
+        <Field name="view" type="AdminGUI" visibility="private"/>
+        <Field name="strategy" type="StrategySelect" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="AdministratorController" visibility="public" isStatic="true"/>
+        <Method name="setView" returnType="void" visibility="public">
+          <Argument type="AdminGUI" name="view"/>
+        </Method>
+        <Method name="setModel" returnType="void" visibility="public"/>
+        <Method name="disposeView" returnType="void" visibility="public"/>
+        <Method name="hasView" returnType="boolean" visibility="public"/>
+        <Method name="addButtonHandler" returnType="void" visibility="public"/>
+        <Method name="addWindowCloseHandler" returnType="void" visibility="public"/>
+        <Method name="setLogoutHandler" returnType="void" visibility="public"/>
+        <Method name="setStrategy" returnType="void" visibility="public"/>
+        <Method name="setAdminInfo" returnType="void" visibility="private"/>
+        <Method name="setAdminMessages" returnType="void" visibility="private"/>
+        <Method name="setDoctorCombo" returnType="void" visibility="private"/>
+        <Method name="setSecCombo" returnType="void" visibility="private"/>
+        <Method name="setAdminCombo" returnType="void" visibility="private"/>
+        <Method name="setDocRatings" returnType="void" visibility="private"/>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="errorMessage"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LoginController" package="Controllers" visibility="public" xPosition="1021.0" yPosition="1255.0">
+      <Fields>
+        <Field name="loginControllerInstance" type="LoginController" visibility="private" isStatic="true" isTransient="true"/>
+        <Field name="userModel" type="UserFacade" visibility="private"/>
+        <Field name="view" type="LoginGUI" visibility="private"/>
+        <Field name="strategy" type="StrategySelect" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="LoginController" visibility="public" isStatic="true"/>
+        <Method name="setView" returnType="void" visibility="public">
+          <Argument type="LoginGUI" name="view"/>
+        </Method>
+        <Method name="setModel" returnType="void" visibility="public"/>
+        <Method name="disposeView" returnType="void" visibility="public"/>
+        <Method name="hasView" returnType="boolean" visibility="public"/>
+        <Method name="addButtonHandler" returnType="void" visibility="public"/>
+        <Method name="addWindowCloseHandler" returnType="void" visibility="public"/>
+        <Method name="setStrategy" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Interface name="ILoginStrategy" package="LoginStrategiesModel" visibility="public" xPosition="184.0" yPosition="21.0">
+      <Methods>
+        <Method name="loadUser" returnType="void" visibility="public"/>
+        <Method name="setController" returnType="void" visibility="public"/>
+        <Method name="setModel" returnType="void" visibility="public"/>
+        <Method name="setView" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+    <Interface name="IRegisterErrorHandling" package="LoginStrategiesModel" visibility="public" xPosition="1502.0" yPosition="21.0">
+      <Methods>
+        <Method name="addUpdateObserver" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="secretaryControllerInstance" source="Controllers.SecretaryController" target="Controllers.SecretaryController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="LoginStrategiesModel.LoggedOutStrategy" target="LoginStrategiesModel.ILoginStrategy"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="LoginStrategiesModel.DoctorStrategy" target="LoginStrategiesModel.ILoginStrategy"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="LoginStrategiesModel.SecretaryStrategy" target="LoginStrategiesModel.ILoginStrategy"/>
+    <HasRelation name="controller" source="LoginStrategiesModel.LoggedOutStrategy" target="Controllers.LoginController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Controllers.AdministratorController" target="Controllers.AdministratorController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="LoginStrategiesModel.SecretaryStrategy" target="LoginStrategiesModel.IRegisterErrorHandling"/>
+    <HasRelation name="controller" source="LoginStrategiesModel.DoctorStrategy" target="Controllers.DoctorController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="strategy" source="Controllers.PatientController" target="LoginStrategiesModel.StrategySelect" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controller" source="LoginStrategiesModel.SecretaryStrategy" target="Controllers.SecretaryController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="doctorControllerInstance" source="Controllers.DoctorController" target="Controllers.DoctorController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="LoginStrategiesModel.DoctorStrategy" target="LoginStrategiesModel.IRegisterErrorHandling"/>
+    <HasRelation name="controller" source="LoginStrategiesModel.AdminStrategy" target="Controllers.AdministratorController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Controllers.SecretaryController" target="Controllers.SecretaryController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Controllers.DoctorController" target="Controllers.DoctorController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Controllers.LoginController" target="Controllers.LoginController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Controllers.PatientController" target="Controllers.PatientController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="LoginStrategiesModel.AdminStrategy" target="LoginStrategiesModel.IRegisterErrorHandling"/>
+    <UseRelation source="LoginStrategiesModel.StrategySelect" target="LoginStrategiesModel.ILoginStrategy" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="strategy" source="Controllers.DoctorController" target="LoginStrategiesModel.StrategySelect" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="LoginStrategiesModel.PatientStrategy" target="LoginStrategiesModel.IRegisterErrorHandling"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="LoginStrategiesModel.PatientStrategy" target="LoginStrategiesModel.ILoginStrategy"/>
+    <HasRelation name="loginControllerInstance" source="Controllers.LoginController" target="Controllers.LoginController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="strategy" source="Controllers.AdministratorController" target="LoginStrategiesModel.StrategySelect" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controller" source="LoginStrategiesModel.PatientStrategy" target="Controllers.PatientController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="strategy" source="Controllers.LoginController" target="LoginStrategiesModel.StrategySelect" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="strategy" source="Controllers.SecretaryController" target="LoginStrategiesModel.StrategySelect" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="patientControllerInstance" source="Controllers.PatientController" target="Controllers.PatientController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="LoginStrategiesModel.AdminStrategy" target="LoginStrategiesModel.ILoginStrategy"/>
+    <HasRelation name="adminControllerInstance" source="Controllers.AdministratorController" target="Controllers.AdministratorController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

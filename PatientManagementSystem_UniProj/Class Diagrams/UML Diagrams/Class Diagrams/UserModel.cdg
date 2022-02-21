@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="Administrator" package="UserModel" visibility="public" xPosition="50.0" yPosition="2066.0">
+      <Fields>
+        <Field name="messages" type="ArrayList&lt;String&gt;" visibility="private"/>
+        <Field name="adminList" type="ArrayList&lt;Administrator&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="protected">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="userPassword"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="ArrayList&lt;String&gt;" name="messages"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="save" returnType="void" visibility="protected"/>
+        <Method name="load" returnType="void" visibility="protected"/>
+        <Method name="checkLogin" returnType="boolean" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="deleteUser" returnType="void" visibility="protected">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getUserInfo" returnType="ArrayList&lt;Administrator&gt;" visibility="protected"/>
+        <Method name="getUserIDList" returnType="ArrayList&lt;String&gt;" visibility="protected"/>
+        <Method name="returnUser" returnType="String" visibility="protected">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getUserIndex" returnType="int" visibility="protected">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="addAdminToList" returnType="void" visibility="protected">
+          <Argument type="Administrator" name="admin"/>
+        </Method>
+        <Method name="receiveMessage" returnType="void" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="getUserMessages" returnType="List&lt;String&gt;" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="deleteMessage" returnType="void" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="int" name="messageIndex"/>
+        </Method>
+        <Method name="setMessages" returnType="void" visibility="public">
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="getMessages" returnType="ArrayList&lt;String&gt;" visibility="protected"/>
+        <Method name="readObject" returnType="void" visibility="private">
+          <Argument type="ObjectInputStream" name="stream"/>
+        </Method>
+        <Method name="writeReplace" returnType="Object" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="Doctor" package="UserModel" visibility="public" xPosition="3275.0" yPosition="1898.0">
+      <Fields>
+        <Field name="address" type="String" visibility="private"/>
+        <Field name="rating" type="ArrayList&lt;Integer&gt;" visibility="private"/>
+        <Field name="messages" type="ArrayList&lt;String&gt;" visibility="private"/>
+        <Field name="doctorList" type="ArrayList&lt;Doctor&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="protected">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="userPassword"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="String" name="address"/>
+          <Argument type="ArrayList&lt;Integer&gt;" name="rating"/>
+          <Argument type="ArrayList&lt;String&gt;" name="messages"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="save" returnType="void" visibility="protected"/>
+        <Method name="load" returnType="void" visibility="protected"/>
+        <Method name="checkLogin" returnType="boolean" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="deleteUser" returnType="void" visibility="protected">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getUserIDList" returnType="ArrayList&lt;String&gt;" visibility="protected"/>
+        <Method name="returnUser" returnType="String" visibility="protected">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getUserInfo" returnType="ArrayList&lt;Doctor&gt;" visibility="protected"/>
+        <Method name="getUserIndex" returnType="int" visibility="protected">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="addDoctorToList" returnType="void" visibility="protected">
+          <Argument type="Doctor" name="doctor"/>
+        </Method>
+        <Method name="doctorsWithRatings" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="averageRating" returnType="double" visibility="private">
+          <Argument type="int" name="doctorIndex"/>
+        </Method>
+        <Method name="receiveMessage" returnType="void" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="getUserMessages" returnType="List&lt;String&gt;" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="deleteMessage" returnType="void" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="int" name="messageIndex"/>
+        </Method>
+        <Method name="getAddress" returnType="String" visibility="public"/>
+        <Method name="setAddress" returnType="void" visibility="public">
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="getRating" returnType="ArrayList&lt;Integer&gt;" visibility="public"/>
+        <Method name="getRating" returnType="ArrayList&lt;Integer&gt;" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="setRating" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;Integer&gt;" name="rating"/>
+        </Method>
+        <Method name="setRating" returnType="void" visibility="public">
+          <Argument type="String" name="doctorID"/>
+          <Argument type="int" name="rating"/>
+        </Method>
+        <Method name="setMessages" returnType="void" visibility="public">
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="getMessages" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="readObject" returnType="void" visibility="private">
+          <Argument type="ObjectInputStream" name="stream"/>
+        </Method>
+        <Method name="writeReplace" returnType="Object" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="Patient" package="UserModel" visibility="public" xPosition="1677.0" yPosition="2084.0">
+      <Fields>
+        <Field name="age" type="int" visibility="private"/>
+        <Field name="address" type="String" visibility="private"/>
+        <Field name="gender" type="char" visibility="private"/>
+        <Field name="notes" type="ArrayList&lt;String&gt;" visibility="private"/>
+        <Field name="messages" type="ArrayList&lt;String&gt;" visibility="private"/>
+        <Field name="prescriptions" type="LinkedList&lt;String&gt;" visibility="private"/>
+        <Field name="appointmentHistory" type="LinkedList&lt;String&gt;" visibility="private"/>
+        <Field name="patientList" type="ArrayList&lt;Patient&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="protected">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="userPassword"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="int" name="age"/>
+          <Argument type="String" name="address"/>
+          <Argument type="char" name="gender"/>
+          <Argument type="ArrayList&lt;String&gt;" name="notes"/>
+          <Argument type="ArrayList&lt;String&gt;" name="messages"/>
+          <Argument type="LinkedList&lt;String&gt;" name="prescriptions"/>
+          <Argument type="LinkedList&lt;String&gt;" name="appointmentHistory"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="save" returnType="void" visibility="protected"/>
+        <Method name="load" returnType="void" visibility="protected"/>
+        <Method name="checkLogin" returnType="boolean" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="deleteUser" returnType="void" visibility="protected">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getUserIDList" returnType="ArrayList&lt;String&gt;" visibility="protected"/>
+        <Method name="returnUser" returnType="String" visibility="protected">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getUserInfo" returnType="ArrayList&lt;Patient&gt;" visibility="protected"/>
+        <Method name="getUserIndex" returnType="int" visibility="protected">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="addPatientToList" returnType="void" visibility="protected">
+          <Argument type="Patient" name="patient"/>
+        </Method>
+        <Method name="receiveMessage" returnType="void" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="getUserMessages" returnType="List&lt;String&gt;" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="deleteMessage" returnType="void" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="int" name="messageIndex"/>
+        </Method>
+        <Method name="getAge" returnType="int" visibility="protected"/>
+        <Method name="setAge" returnType="void" visibility="public">
+          <Argument type="int" name="age"/>
+        </Method>
+        <Method name="getAddress" returnType="String" visibility="protected"/>
+        <Method name="setAddress" returnType="void" visibility="public">
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="getGender" returnType="char" visibility="protected"/>
+        <Method name="setGender" returnType="void" visibility="public">
+          <Argument type="char" name="gender"/>
+        </Method>
+        <Method name="getNotes" returnType="ArrayList&lt;String&gt;" visibility="protected"/>
+        <Method name="getNotes" returnType="ArrayList&lt;String&gt;" visibility="protected">
+          <Argument type="String" name="patID"/>
+        </Method>
+        <Method name="setNotes" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;String&gt;" name="notes"/>
+        </Method>
+        <Method name="setNotes" returnType="void" visibility="protected">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="notes"/>
+        </Method>
+        <Method name="setMessages" returnType="void" visibility="public">
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="getMessages" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="getPrescriptions" returnType="LinkedList&lt;String&gt;" visibility="public"/>
+        <Method name="getPrescriptions" returnType="LinkedList&lt;String&gt;" visibility="protected">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="setPrescriptions" returnType="void" visibility="public">
+          <Argument type="LinkedList&lt;String&gt;" name="prescriptions"/>
+        </Method>
+        <Method name="setPrescriptions" returnType="void" visibility="public">
+          <Argument type="String" name="patientID"/>
+          <Argument type="String" name="prescription"/>
+        </Method>
+        <Method name="getAppointmentHistory" returnType="LinkedList&lt;String&gt;" visibility="public"/>
+        <Method name="getAppointmentHistory" returnType="LinkedList&lt;String&gt;" visibility="public">
+          <Argument type="String" name="patientID"/>
+        </Method>
+        <Method name="setAppointmentHistory" returnType="void" visibility="public">
+          <Argument type="LinkedList&lt;String&gt;" name="appointmentHistory"/>
+        </Method>
+        <Method name="addAppointmentToHistory" returnType="void" visibility="public">
+          <Argument type="String" name="appointment"/>
+          <Argument type="String" name="patID"/>
+        </Method>
+        <Method name="readObject" returnType="void" visibility="private">
+          <Argument type="ObjectInputStream" name="stream"/>
+        </Method>
+        <Method name="writeReplace" returnType="Object" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="Secretary" package="UserModel" visibility="public" xPosition="869.0" yPosition="2066.0">
+      <Fields>
+        <Field name="secList" type="ArrayList&lt;Secretary&gt;" visibility="private"/>
+        <Field name="messages" type="ArrayList&lt;String&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="protected">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="userPassword"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="ArrayList&lt;String&gt;" name="messages"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="save" returnType="void" visibility="protected"/>
+        <Method name="load" returnType="void" visibility="protected"/>
+        <Method name="checkLogin" returnType="boolean" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="deleteUser" returnType="void" visibility="protected">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getUserInfo" returnType="ArrayList&lt;Secretary&gt;" visibility="protected"/>
+        <Method name="getUserIDList" returnType="ArrayList&lt;String&gt;" visibility="protected"/>
+        <Method name="getUserIndex" returnType="int" visibility="protected">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="returnUser" returnType="String" visibility="protected">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="addSecToList" returnType="void" visibility="protected">
+          <Argument type="Secretary" name="sec"/>
+        </Method>
+        <Method name="receiveMessage" returnType="void" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="getUserMessages" returnType="List&lt;String&gt;" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="deleteMessage" returnType="void" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="int" name="messageIndex"/>
+        </Method>
+        <Method name="setMessages" returnType="void" visibility="public">
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="getMessages" returnType="ArrayList&lt;String&gt;" visibility="protected"/>
+        <Method name="readObject" returnType="void" visibility="private">
+          <Argument type="ObjectInputStream" name="stream"/>
+        </Method>
+        <Method name="writeReplace" returnType="Object" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="SignUpUser" package="UserModel" visibility="public" xPosition="261.0" yPosition="56.0">
+      <Fields>
+        <Field name="age" type="int" visibility="private"/>
+        <Field name="address" type="String" visibility="private"/>
+        <Field name="signupRequestList" type="ArrayList&lt;SignUpUser&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="protected">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="userPassword"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="int" name="age"/>
+          <Argument type="String" name="address"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="signupRequest" returnType="void" visibility="public">
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="forename"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="int" name="age"/>
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="removeSignupRequest" returnType="void" visibility="protected">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="getApprovedPatient" returnType="SignUpUser" visibility="protected">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="save" returnType="void" visibility="protected"/>
+        <Method name="load" returnType="void" visibility="protected"/>
+        <Method name="deleteUser" returnType="void" visibility="protected">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getUserInfo" returnType="ArrayList&lt;SignUpUser&gt;" visibility="protected"/>
+        <Method name="getUserIDList" returnType="ArrayList&lt;String&gt;" visibility="protected"/>
+        <Method name="returnUser" returnType="String" visibility="protected">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getUser" returnType="String" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="getUserIndex" returnType="int" visibility="protected">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getAge" returnType="int" visibility="public"/>
+        <Method name="getAddress" returnType="String" visibility="public"/>
+        <Method name="readObject" returnType="void" visibility="private">
+          <Argument type="ObjectInputStream" name="stream"/>
+        </Method>
+        <Method name="writeReplace" returnType="Object" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="User" package="UserModel" visibility="public" isAbstract="true" xPosition="297.0" yPosition="675.0">
+      <Fields>
+        <Field name="userID" type="String" visibility="private"/>
+        <Field name="userPassword" type="String" visibility="private"/>
+        <Field name="title" type="String" visibility="private"/>
+        <Field name="firstName" type="String" visibility="private"/>
+        <Field name="surname" type="String" visibility="private"/>
+        <Field name="saveFileName" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="userPassword"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="firstName"/>
+          <Argument type="String" name="surname"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="save" returnType="void" visibility="package" isAbstract="true"/>
+        <Method name="load" returnType="void" visibility="package" isAbstract="true"/>
+        <Method name="deleteUser" returnType="void" visibility="package" isAbstract="true">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getUserIDList" returnType="List&lt;String&gt;" visibility="package" isAbstract="true"/>
+        <Method name="returnUser" returnType="String" visibility="package" isAbstract="true">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getUserInfo" returnType="List&lt;? extends User&gt;" visibility="package" isAbstract="true"/>
+        <Method name="getUserIndex" returnType="int" visibility="protected" isAbstract="true">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="generateID" returnType="String" visibility="protected">
+          <Argument type="ArrayList&lt;String&gt;" name="userIDList"/>
+          <Argument type="UserTypes" name="userType"/>
+        </Method>
+        <Method name="getUserID" returnType="String" visibility="public"/>
+        <Method name="getUserPassword" returnType="String" visibility="public"/>
+        <Method name="getTitle" returnType="String" visibility="public"/>
+        <Method name="getFirstName" returnType="String" visibility="public"/>
+        <Method name="getSurname" returnType="String" visibility="public"/>
+        <Method name="getSaveFileName" returnType="String" visibility="public"/>
+        <Method name="setUserID" returnType="void" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="setUserPassword" returnType="void" visibility="public">
+          <Argument type="String" name="userPassword"/>
+        </Method>
+        <Method name="setTitle" returnType="void" visibility="public">
+          <Argument type="String" name="title"/>
+        </Method>
+        <Method name="setFirstName" returnType="void" visibility="public">
+          <Argument type="String" name="firstName"/>
+        </Method>
+        <Method name="setSurname" returnType="void" visibility="public">
+          <Argument type="String" name="surname"/>
+        </Method>
+        <Method name="setSaveFileName" returnType="void" visibility="public">
+          <Argument type="String" name="saveFileName"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UserFacade" package="UserModel" visibility="public" xPosition="1450.0" yPosition="11.0">
+      <Fields>
+        <Field name="userFacadeInstance" type="UserFacade" visibility="private" isStatic="true" isTransient="true"/>
+        <Field name="patient" type="Patient" visibility="private" isFinal="true"/>
+        <Field name="doctor" type="Doctor" visibility="private" isFinal="true"/>
+        <Field name="sec" type="Secretary" visibility="private" isFinal="true"/>
+        <Field name="admin" type="Administrator" visibility="private" isFinal="true"/>
+        <Field name="signupUser" type="SignUpUser" visibility="private" isFinal="true"/>
+        <Field name="factory" type="UserFactory" visibility="private" isFinal="true"/>
+        <Field name="medicines" type="MedicineStock" visibility="private" isFinal="true"/>
+        <Field name="loginCheck" type="ILoginCheck" visibility="private"/>
+        <Field name="messageReceiver" type="IReceiveMessages" visibility="private"/>
+        <Field name="loggedInUserID" type="String" visibility="private"/>
+        <Field name="userType" type="User" visibility="private"/>
+        <Field name="messageSent" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="UserFacade" visibility="public" isStatic="true"/>
+        <Method name="setUserOperationType" returnType="void" visibility="private">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="checkLoginCredentials" returnType="boolean" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="deleteUser" returnType="void" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="createUser" returnType="void" visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="forename"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="getUserInfo" returnType="ArrayList&lt;String&gt;" visibility="public">
+          <Argument type="String" name="user"/>
+        </Method>
+        <Method name="getUserInfo" returnType="String" visibility="public"/>
+        <Method name="getUserIDs" returnType="List&lt;String&gt;" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="saveAll" returnType="void" visibility="public"/>
+        <Method name="getUserPrescription" returnType="LinkedList&lt;String&gt;" visibility="public">
+          <Argument type="String" name="patientID"/>
+        </Method>
+        <Method name="getPatientNotes" returnType="ArrayList&lt;String&gt;" visibility="public">
+          <Argument type="String" name="patientID"/>
+        </Method>
+        <Method name="addPatientNotes" returnType="void" visibility="public">
+          <Argument type="String" name="patientID"/>
+          <Argument type="String" name="notes"/>
+        </Method>
+        <Method name="signupRequest" returnType="void" visibility="public">
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="String" name="forename"/>
+          <Argument type="int" name="age"/>
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="signupDeclined" returnType="void" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="signupApproved" returnType="void" visibility="public">
+          <Argument type="int" name="signupUserIndex"/>
+        </Method>
+        <Method name="getAccountRequests" returnType="ArrayList&lt;SignUpUser&gt;" visibility="public"/>
+        <Method name="sendMessage" returnType="void" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="deleteMessage" returnType="void" visibility="public">
+          <Argument type="int" name="messageIndex"/>
+        </Method>
+        <Method name="getUserMessages" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="getAppointmenthistory" returnType="List&lt;String&gt;" visibility="public">
+          <Argument type="String" name="patientID"/>
+        </Method>
+        <Method name="addAppointmentToHistory" returnType="void" visibility="public">
+          <Argument type="String" name="appointment"/>
+          <Argument type="String" name="patientID"/>
+        </Method>
+        <Method name="giveMedicine" returnType="void" visibility="public">
+          <Argument type="int" name="medStockIndex"/>
+          <Argument type="int" name="quantity"/>
+          <Argument type="String" name="patientID"/>
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="getLoggedInUser" returnType="String" visibility="public"/>
+        <Method name="doctorsWithRatings" returnType="List&lt;Integer&gt;" visibility="public"/>
+        <Method name="setRating" returnType="void" visibility="public">
+          <Argument type="String" name="docId"/>
+          <Argument type="int" name="rating"/>
+        </Method>
+        <Method name="getRating" returnType="ArrayList&lt;Integer&gt;" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getDocsAndRatings" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="UserFactory" package="UserModel" visibility="public" xPosition="2586.0" yPosition="1247.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="addUser" returnType="void" visibility="public">
+          <Argument type="String" name="userType"/>
+          <Argument type="Patient" name="p"/>
+          <Argument type="Doctor" name="d"/>
+          <Argument type="Secretary" name="s"/>
+          <Argument type="Administrator" name="a"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="forename"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="int" name="age"/>
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="addDoctor" returnType="void" visibility="private">
+          <Argument type="Doctor" name="doctor"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="forename"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="addSecretary" returnType="void" visibility="private">
+          <Argument type="Secretary" name="sec"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="forename"/>
+          <Argument type="String" name="surname"/>
+        </Method>
+        <Method name="addAdministrator" returnType="void" visibility="private">
+          <Argument type="Administrator" name="admin"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="forename"/>
+          <Argument type="String" name="surname"/>
+        </Method>
+        <Method name="addPatient" returnType="void" visibility="private">
+          <Argument type="Patient" name="patient"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="forename"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="int" name="age"/>
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="determineGender" returnType="char" visibility="private">
+          <Argument type="String" name="title"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="ILoginCheck" package="UserModel" visibility="public" xPosition="777.0" yPosition="3082.0">
+      <Methods>
+        <Method name="checkLogin" returnType="boolean" visibility="package" isAbstract="true">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="password"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="IReceiveMessages" package="UserModel" visibility="public" xPosition="1322.0" yPosition="3082.0">
+      <Methods>
+        <Method name="receiveMessage" returnType="void" visibility="package" isAbstract="true">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="getUserMessages" returnType="List&lt;String&gt;" visibility="package" isAbstract="true">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="deleteMessage" returnType="void" visibility="package" isAbstract="true">
+          <Argument type="String" name="userID"/>
+          <Argument type="int" name="messageIndex"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Enum name="UserTypes" package="UserModel" visibility="public" xPosition="926.0" yPosition="612.0">
+      <Literals>
+        <Literal name="P"/>
+        <Literal name="D"/>
+        <Literal name="A"/>
+        <Literal name="S"/>
+        <Literal name="T"/>
+        <Literal name="L"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="UserModel.Administrator" target="UserModel.IReceiveMessages"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="UserModel.Patient" target="UserModel.IReceiveMessages"/>
+    <HasRelation name="signupUser" source="UserModel.UserFacade" target="UserModel.SignUpUser" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="UserModel.UserFactory" target="UserModel.Doctor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="UserModel.UserFactory" target="UserModel.Patient" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="UserModel.Patient" target="UserModel.ILoginCheck"/>
+    <UseRelation source="UserModel.UserFactory" target="UserModel.Administrator" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="patient" source="UserModel.UserFacade" target="UserModel.Patient" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="UserModel.User" target="UserModel.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="loginCheck" source="UserModel.UserFacade" target="UserModel.ILoginCheck" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="UserModel.Patient" target="UserModel.User"/>
+    <HasRelation name="secList" source="UserModel.Secretary" target="UserModel.Secretary" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Secretary&gt;"/>
+    <IsRelation name="is" source="UserModel.Administrator" target="UserModel.User"/>
+    <HasRelation name="userFacadeInstance" source="UserModel.UserFacade" target="UserModel.UserFacade" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="UserModel.Doctor" target="UserModel.IReceiveMessages"/>
+    <HasRelation name="sec" source="UserModel.UserFacade" target="UserModel.Secretary" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="UserModel.User" target="UserModel.UserTypes" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="UserModel.Administrator" target="UserModel.ILoginCheck"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="UserModel.Doctor" target="UserModel.ILoginCheck"/>
+    <UseRelation source="UserModel.UserFactory" target="UserModel.Secretary" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="UserModel.SignUpUser" target="UserModel.User"/>
+    <HasRelation name="doctorList" source="UserModel.Doctor" target="UserModel.Doctor" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Doctor&gt;"/>
+    <HasRelation name="adminList" source="UserModel.Administrator" target="UserModel.Administrator" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Administrator&gt;"/>
+    <HasRelation name="patientList" source="UserModel.Patient" target="UserModel.Patient" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Patient&gt;"/>
+    <IsRelation name="is" source="UserModel.Secretary" target="UserModel.User"/>
+    <HasRelation name="messageReceiver" source="UserModel.UserFacade" target="UserModel.IReceiveMessages" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="UserModel.UserFacade" target="UserModel.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="doctor" source="UserModel.UserFacade" target="UserModel.Doctor" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="UserModel.Administrator" target="UserModel.Administrator" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="UserModel.Secretary" target="UserModel.IReceiveMessages"/>
+    <UseRelation source="UserModel.Doctor" target="UserModel.Doctor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="admin" source="UserModel.UserFacade" target="UserModel.Administrator" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="UserModel.Secretary" target="UserModel.Secretary" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="UserModel.UserFacade" target="UserModel.UserFacade" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="UserModel.Doctor" target="UserModel.User"/>
+    <HasRelation name="userType" source="UserModel.UserFacade" target="UserModel.User" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="UserModel.Secretary" target="UserModel.ILoginCheck"/>
+    <HasRelation name="signupRequestList" source="UserModel.SignUpUser" target="UserModel.SignUpUser" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;SignUpUser&gt;"/>
+    <UseRelation source="UserModel.SignUpUser" target="UserModel.User" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="UserModel.Patient" target="UserModel.Patient" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="factory" source="UserModel.UserFacade" target="UserModel.UserFactory" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

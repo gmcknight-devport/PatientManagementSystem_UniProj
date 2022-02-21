@@ -1,0 +1,59 @@
+Patient Data:
+
+-P1001, patientpassword, Mr, John, Sickness, 30, 5 Deathly Road Plymouth  PL1 1EE, M
+-P1002, 2ndpatientpassword, They, Air, Syphon, 40, 16 Unfortunate Ave Plymouth PL20 9IE, O
+-P1003, 3rdpatientpassword, Mrs, Philomena, Lynott, 80, 5 Emerald View Plymouth PL15 7BB, F
+
+
+Doctor Data:
+
+-D1001, doctorpassword, Dr, Pauline, Health, This here surgery some road Exeter EX2 8LB
+-D1002, 2nddoctorpassword, Dr, Jeremy, Full, This here surgery some road, Exeter EX2 8LB
+-D1003, 3rddoctorpassword, Dr, Ellen, Ellenson, This here surgery some road Exeter EX2 8LB
+
+
+Secretary Data: 
+
+-S1001, secpassword, Mr, Norm, Surly
+
+
+Administrator Data:
+
+-A1001, adminpassword, Miss, Melanie, Lady
+
+
+Sign Up Request Data
+
+- passpass12 Mrs., Franki, Franklin, 34, 15 don't know where I live Plymouth PL3 5TG
+- passwordy1, They, Sky, Auburn, 19, 109 spiffing avenue Plymouth PL1 1PO
+
+
+Appointments Data:
+
+- D1001, 08:00, 2020, Month.MARCH, 13, P1001
+- D1001, 12:30, 2020, Month.OCTOBER, 9, P1001
+- D1001, 16:30, 2020, Month.APRIL, 20, P1001
+- D1001, 14:00, 2020, Month.NOVEMBER, 20, P1002
+- D1001, 09:00, 2020, Month.NOVEMBER, 25, P1003
+- D1002, 09:30, 2020, Month.DECEMBER, 18, P1003
+- D1003, 15:00, 2020, Month.OCTOBER, 5, P1003
+- D1003, 16:30, 2021, Month.JANUARY, 5, P1002
+- D1003, 17:30, 2020, Month.JANUARY, 29, P1002
+
+
+Medicine Data:
+
+- Lithium, 300mg / twice per day, 60, Mania Bipolar Disorder
+- Diazepam, 5mg / 3-4 times per day, 100, Anxiety disorders alochol withdrawal symptoms muscle spasms
+- Lorazepam, 2mg / 2-3times per da, 20, Anxiety disorders seizures
+- Insulin, 4 units, 90, Diabetes
+- Zopaclone, 1mg before bed, 10, Insomnia
+- Amoxicillan, 250mg / twice per day, 10, Bacerial infections
+- Hydrocortisone, 1% / apply as needed, 15, Inflammation
+- Atorvastatin, 20mg / once per day, 22, High cholesterol stroke and heart attack risk
+- Lisinopril, 5mg / once per day, 10, High blood pressure
+- Warfarin, 5mg / once per day, 40, Blood thinner to reduce clotting
+
+
+	
+

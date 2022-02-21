@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="PatientController" package="Controllers" visibility="public" xPosition="84.0" yPosition="597.0">
+      <Fields>
+        <Field name="patientControllerInstance" type="PatientController" visibility="private" isStatic="true" isTransient="true"/>
+        <Field name="view" type="PatientGUI" visibility="private"/>
+        <Field name="userModel" type="UserFacade" visibility="private"/>
+        <Field name="servicesModel" type="ServicesFacade" visibility="private"/>
+        <Field name="appointmentModel" type="ServicesFacade" visibility="private" isFinal="true"/>
+        <Field name="strategy" type="StrategySelect" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="PatientController" visibility="public" isStatic="true"/>
+        <Method name="setView" returnType="void" visibility="public">
+          <Argument type="PatientGUI" name="view"/>
+        </Method>
+        <Method name="setModel" returnType="void" visibility="public"/>
+        <Method name="disposeView" returnType="void" visibility="public"/>
+        <Method name="hasView" returnType="boolean" visibility="public"/>
+        <Method name="addButtonHandler" returnType="void" visibility="public"/>
+        <Method name="addWindowCloseHandler" returnType="void" visibility="public"/>
+        <Method name="setLogoutHandler" returnType="void" visibility="public"/>
+        <Method name="setStrategy" returnType="void" visibility="public"/>
+        <Method name="setPatientInfo" returnType="void" visibility="private"/>
+        <Method name="setPatientMessages" returnType="void" visibility="private"/>
+        <Method name="setPatientCurrPrescription" returnType="void" visibility="private"/>
+        <Method name="setPatientAppointment" returnType="void" visibility="private"/>
+        <Method name="setAppointmentDateFormat" returnType="void" visibility="private"/>
+        <Method name="setAppointmentTimes" returnType="void" visibility="private"/>
+        <Method name="setAppointmentDoctorIDs" returnType="void" visibility="private"/>
+        <Method name="setRatedDoctors" returnType="void" visibility="private"/>
+        <Method name="setAppointmentHistory" returnType="void" visibility="public"/>
+        <Method name="setPrescriptionHistory" returnType="void" visibility="public"/>
+        <Method name="setNotesHistory" returnType="void" visibility="public"/>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="errorMessage"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="StrategySelect" package="LoginStrategiesModel" visibility="public" xPosition="650.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="selectStrategy" returnType="ILoginStrategy" visibility="public">
+          <Argument type="String" name="userType"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ServicesFacade" package="SystemServices" visibility="public" xPosition="857.0" yPosition="229.0">
+      <Fields>
+        <Field name="servicesFacadeInstance" type="ServicesFacade" visibility="private" isStatic="true" isTransient="true"/>
+        <Field name="userModel" type="UserFacade" visibility="private" isFinal="true"/>
+        <Field name="appointments" type="Appointments" visibility="private" isFinal="true"/>
+        <Field name="medicines" type="MedicineStock" visibility="private" isFinal="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="ServicesFacade" visibility="public" isStatic="true"/>
+        <Method name="save" returnType="void" visibility="public"/>
+        <Method name="sortAppointments" returnType="void" visibility="private"/>
+        <Method name="getCurrentAppointments" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="getUnapprovedAppointments" returnType="String[]" visibility="public"/>
+        <Method name="getPossibleTimes" returnType="List&lt;String&gt;" visibility="public"/>
+        <Method name="requestAppointment" returnType="void" visibility="public">
+          <Argument type="String" name="docId"/>
+          <Argument type="String" name="time"/>
+          <Argument type="LocalDate" name="date"/>
+          <Argument type="String" name="patId"/>
+        </Method>
+        <Method name="addAppointment" returnType="void" visibility="public">
+          <Argument type="String" name="docId"/>
+          <Argument type="String" name="time"/>
+          <Argument type="LocalDate" name="date"/>
+          <Argument type="String" name="patId"/>
+        </Method>
+        <Method name="setApproved" returnType="void" visibility="public">
+          <Argument type="int" name="appointmentIndex"/>
+        </Method>
+        <Method name="declineAppointment" returnType="void" visibility="public">
+          <Argument type="int" name="appointmentIndex"/>
+        </Method>
+        <Method name="deleteAppointment" returnType="void" visibility="public">
+          <Argument type="int" name="appointmentIndex"/>
+        </Method>
+        <Method name="getMedStock" returnType="ArrayList&lt;MedicineStock&gt;" visibility="public"/>
+        <Method name="prescribeMedicine" returnType="void" visibility="public">
+          <Argument type="int" name="medicineIndex"/>
+        </Method>
+        <Method name="getMedicineName" returnType="String" visibility="public">
+          <Argument type="int" name="medicineIndex"/>
+        </Method>
+        <Method name="addMedicine" returnType="void" visibility="public">
+          <Argument type="String" name="medName"/>
+          <Argument type="String" name="dosage"/>
+          <Argument type="String" name="commonUses"/>
+        </Method>
+        <Method name="updateStock" returnType="void" visibility="public">
+          <Argument type="int" name="medicineIndex"/>
+          <Argument type="int" name="quantity"/>
+        </Method>
+        <Method name="deleteMedicine" returnType="void" visibility="public">
+          <Argument type="int" name="medicineIndex"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="UserFacade" package="UserModel" visibility="public" xPosition="1484.0" yPosition="452.0">
+      <Fields>
+        <Field name="userFacadeInstance" type="UserFacade" visibility="private" isStatic="true" isTransient="true"/>
+        <Field name="patient" type="Patient" visibility="private" isFinal="true"/>
+        <Field name="doctor" type="Doctor" visibility="private" isFinal="true"/>
+        <Field name="sec" type="Secretary" visibility="private" isFinal="true"/>
+        <Field name="admin" type="Administrator" visibility="private" isFinal="true"/>
+        <Field name="signupUser" type="SignUpUser" visibility="private" isFinal="true"/>
+        <Field name="factory" type="UserFactory" visibility="private" isFinal="true"/>
+        <Field name="medicines" type="MedicineStock" visibility="private" isFinal="true"/>
+        <Field name="loginCheck" type="ILoginCheck" visibility="private"/>
+        <Field name="messageReceiver" type="IReceiveMessages" visibility="private"/>
+        <Field name="loggedInUserID" type="String" visibility="private"/>
+        <Field name="userType" type="User" visibility="private"/>
+        <Field name="messageSent" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="UserFacade" visibility="public" isStatic="true"/>
+        <Method name="setUserOperationType" returnType="void" visibility="private">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="checkLoginCredentials" returnType="boolean" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="password"/>
+        </Method>
+        <Method name="deleteUser" returnType="void" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="createUser" returnType="void" visibility="public">
+          <Argument type="String" name="user"/>
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="forename"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="getUserInfo" returnType="ArrayList&lt;String&gt;" visibility="public">
+          <Argument type="String" name="user"/>
+        </Method>
+        <Method name="getUserInfo" returnType="String" visibility="public"/>
+        <Method name="getUserIDs" returnType="List&lt;String&gt;" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="saveAll" returnType="void" visibility="public"/>
+        <Method name="getUserPrescription" returnType="LinkedList&lt;String&gt;" visibility="public">
+          <Argument type="String" name="patientID"/>
+        </Method>
+        <Method name="getPatientNotes" returnType="ArrayList&lt;String&gt;" visibility="public">
+          <Argument type="String" name="patientID"/>
+        </Method>
+        <Method name="addPatientNotes" returnType="void" visibility="public">
+          <Argument type="String" name="patientID"/>
+          <Argument type="String" name="notes"/>
+        </Method>
+        <Method name="signupRequest" returnType="void" visibility="public">
+          <Argument type="String" name="password"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="String" name="forename"/>
+          <Argument type="int" name="age"/>
+          <Argument type="String" name="address"/>
+        </Method>
+        <Method name="signupDeclined" returnType="void" visibility="public">
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="signupApproved" returnType="void" visibility="public">
+          <Argument type="int" name="signupUserIndex"/>
+        </Method>
+        <Method name="getAccountRequests" returnType="ArrayList&lt;SignUpUser&gt;" visibility="public"/>
+        <Method name="sendMessage" returnType="void" visibility="public">
+          <Argument type="String" name="userID"/>
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="deleteMessage" returnType="void" visibility="public">
+          <Argument type="int" name="messageIndex"/>
+        </Method>
+        <Method name="getUserMessages" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+        <Method name="getAppointmenthistory" returnType="List&lt;String&gt;" visibility="public">
+          <Argument type="String" name="patientID"/>
+        </Method>
+        <Method name="addAppointmentToHistory" returnType="void" visibility="public">
+          <Argument type="String" name="appointment"/>
+          <Argument type="String" name="patientID"/>
+        </Method>
+        <Method name="giveMedicine" returnType="void" visibility="public">
+          <Argument type="int" name="medStockIndex"/>
+          <Argument type="int" name="quantity"/>
+          <Argument type="String" name="patientID"/>
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="getLoggedInUser" returnType="String" visibility="public"/>
+        <Method name="doctorsWithRatings" returnType="List&lt;Integer&gt;" visibility="public"/>
+        <Method name="setRating" returnType="void" visibility="public">
+          <Argument type="String" name="docId"/>
+          <Argument type="int" name="rating"/>
+        </Method>
+        <Method name="getRating" returnType="ArrayList&lt;Integer&gt;" visibility="public">
+          <Argument type="String" name="userID"/>
+        </Method>
+        <Method name="getDocsAndRatings" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="PatientGUI" package="View" visibility="public" xPosition="607.0" yPosition="1146.0">
+      <Fields>
+        <Field name="accountTerminationJButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="appointmentDOctorJLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="appointmentDateJLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="appointmentDateJSpinner" type="javax.swing.JSpinner" visibility="private"/>
+        <Field name="appointmentDoctorJCombo" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="appointmentHistoryJLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="appointmentHistoryJList" type="javax.swing.JList&lt;String&gt;" visibility="private"/>
+        <Field name="appointmentTimeJCombo" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="appointmentTimeJLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="appointmentsJList" type="javax.swing.JList&lt;String&gt;" visibility="private"/>
+        <Field name="appointmentsJPanel" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="backgroundJTabbedPane" type="javax.swing.JTabbedPane" visibility="private"/>
+        <Field name="currentDocRatingsJList" type="javax.swing.JList&lt;String&gt;" visibility="private"/>
+        <Field name="currentPrescriptionJLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="currentPrescriptionJText" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="deleteMessageJButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="detailsJLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="doctorJPanel" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="doctorRatingJlabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="doctorsDocIDJCombo" type="javax.swing.JComboBox&lt;String&gt;" visibility="private"/>
+        <Field name="doctorsJLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="feedbackJLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="feedbackJText" type="javax.swing.JTextArea" visibility="private"/>
+        <Field name="historyJPanel" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="homeJPanel" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane3" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane4" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane5" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane6" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane7" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="logoutJButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="messagesJLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="messagesJList" type="javax.swing.JList&lt;String&gt;" visibility="private"/>
+        <Field name="notesHistoryJLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="notesHistoryJList" type="javax.swing.JList&lt;String&gt;" visibility="private"/>
+        <Field name="prescriptionHistoryJLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="prescriptionHistoryJList" type="javax.swing.JList&lt;String&gt;" visibility="private"/>
+        <Field name="rateDoctorJLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="rateJButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="ratingJLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="ratingJSpinner" type="javax.swing.JSpinner" visibility="private"/>
+        <Field name="requestAppointmentJButton" type="javax.swing.JButton" visibility="private"/>
+        <Field name="requestAppointmentJLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="titleJLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="userInfoJText" type="javax.swing.JTextArea" visibility="private"/>
+        <Field name="welcomeJLabel" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="yourAppointmentsJLabel" type="javax.swing.JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+        <Method name="displayMessage" returnType="void" visibility="public">
+          <Argument type="String" name="message"/>
+        </Method>
+        <Method name="setPatientInfo" returnType="void" visibility="public">
+          <Argument type="String" name="info"/>
+        </Method>
+        <Method name="setUserMessages" returnType="void" visibility="public">
+          <Argument type="List&lt;String&gt;" name="messages"/>
+        </Method>
+        <Method name="addDeleteMessageButtonHandler" returnType="void" visibility="public">
+          <Argument type="ActionListener" name="controller"/>
+        </Method>
+        <Method name="getSelectedMessageIndex" returnType="int" visibility="public"/>
+        <Method name="setCurrentPrescription" returnType="void" visibility="public">
+          <Argument type="String" name="currentPrescription"/>
+        </Method>
+        <Method name="addAccountTerminationButtonHandler" returnType="void" visibility="public">
+          <Argument type="ActionListener" name="controller"/>
+        </Method>
+        <Method name="setAppointmentsJList" returnType="void" visibility="public">
+          <Argument type="String[]" name="appointments"/>
+        </Method>
+        <Method name="setAppointmentDateSpinnerFormat" returnType="void" visibility="public"/>
+        <Method name="setAppointmentTimeCombo" returnType="void" visibility="public">
+          <Argument type="List&lt;String&gt;" name="times"/>
+        </Method>
+        <Method name="setDoctorCombos" returnType="void" visibility="public">
+          <Argument type="List&lt;String&gt;" name="doctorIDs"/>
+        </Method>
+        <Method name="getAppointmentDate" returnType="LocalDate" visibility="public"/>
+        <Method name="getAppointmentTime" returnType="String" visibility="public"/>
+        <Method name="getAppointmentDoctor" returnType="String" visibility="public"/>
+        <Method name="setRatedDoctors" returnType="void" visibility="public">
+          <Argument type="String[]" name="doctors"/>
+        </Method>
+        <Method name="getRatedDoctor" returnType="String" visibility="public"/>
+        <Method name="getDoctorRating" returnType="int" visibility="public"/>
+        <Method name="getFeedback" returnType="String" visibility="public"/>
+        <Method name="clearFeedback" returnType="void" visibility="public"/>
+        <Method name="addRateDoctorButtonHandler" returnType="void" visibility="public">
+          <Argument type="ActionListener" name="controller"/>
+        </Method>
+        <Method name="setAppointmentHistory" returnType="void" visibility="public">
+          <Argument type="String[]" name="appointments"/>
+        </Method>
+        <Method name="setPrescriptionHistory" returnType="void" visibility="public">
+          <Argument type="String[]" name="prescriptions"/>
+        </Method>
+        <Method name="setNotesHistory" returnType="void" visibility="public">
+          <Argument type="String[]" name="notes"/>
+        </Method>
+        <Method name="addRequestAppointmentButtonHandler" returnType="void" visibility="public">
+          <Argument type="ActionListener" name="controller"/>
+        </Method>
+        <Method name="addLogoutButtonHandler" returnType="void" visibility="public">
+          <Argument type="ActionListener" name="controller"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="IController" package="Controllers" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Methods>
+        <Method name="setModel" returnType="void" visibility="public"/>
+        <Method name="disposeView" returnType="void" visibility="public"/>
+        <Method name="hasView" returnType="boolean" visibility="public"/>
+        <Method name="addButtonHandler" returnType="void" visibility="package"/>
+        <Method name="addWindowCloseHandler" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Interface name="ISetLogoutStrategy" package="Controllers" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Methods>
+        <Method name="setLogoutHandler" returnType="void" visibility="package" isAbstract="true"/>
+        <Method name="setStrategy" returnType="void" visibility="package" isAbstract="true"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="SystemServices.ServicesFacade" target="SystemServices.ServicesFacade" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="userFacadeInstance" source="UserModel.UserFacade" target="UserModel.UserFacade" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="UserModel.UserFacade" target="UserModel.UserFacade" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Controllers.PatientController" target="Controllers.IController"/>
+    <HasRelation name="appointmentModel" source="Controllers.PatientController" target="SystemServices.ServicesFacade" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="servicesModel" source="Controllers.PatientController" target="SystemServices.ServicesFacade" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="servicesFacadeInstance" source="SystemServices.ServicesFacade" target="SystemServices.ServicesFacade" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Controllers.PatientController" target="View.PatientGUI" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="strategy" source="Controllers.PatientController" target="LoginStrategiesModel.StrategySelect" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Controllers.PatientController" target="Controllers.ISetLogoutStrategy"/>
+    <HasRelation name="userModel" source="Controllers.PatientController" target="UserModel.UserFacade" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Controllers.PatientController" target="Controllers.PatientController" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="patientControllerInstance" source="Controllers.PatientController" target="Controllers.PatientController" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="view" source="Controllers.PatientController" target="View.PatientGUI" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="userModel" source="SystemServices.ServicesFacade" target="UserModel.UserFacade" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

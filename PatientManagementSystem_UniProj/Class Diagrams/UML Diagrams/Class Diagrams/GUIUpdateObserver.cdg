@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Multi-file class diagram">
+  <ClassDiagramComponents>
+    <Class name="GUIUpdate" package="GUIUpdateObserver" visibility="public" isFinal="true" xPosition="347.0" yPosition="390.0">
+      <Fields>
+        <Field name="updateInstance" type="GUIUpdate" visibility="private" isStatic="true" isTransient="true"/>
+        <Field name="errorObservers" type="List&lt;GUIUpdateObserver&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="GUIUpdate" visibility="public" isStatic="true"/>
+        <Method name="updateObserver" returnType="void" visibility="public">
+          <Argument type="GUIUpdateObserver" name="observer"/>
+        </Method>
+        <Method name="removeUpdateObserver" returnType="void" visibility="public">
+          <Argument type="GUIUpdateObserver" name="observer"/>
+        </Method>
+        <Method name="notifyUpdateObserver" returnType="void" visibility="public">
+          <Argument type="String" name="errorMessage"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="GUIUpdateObservable" package="GUIUpdateObserver" visibility="public" xPosition="86.0" yPosition="20.0">
+      <Methods>
+        <Method name="updateObserver" returnType="void" visibility="public">
+          <Argument type="GUIUpdateObserver" name="observer"/>
+        </Method>
+        <Method name="removeUpdateObserver" returnType="void" visibility="public">
+          <Argument type="GUIUpdateObserver" name="observer"/>
+        </Method>
+        <Method name="notifyUpdateObserver" returnType="void" visibility="public">
+          <Argument type="String" name="errorMessage"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Interface name="GUIUpdateObserver" package="GUIUpdateObserver" visibility="public" xPosition="676.0" yPosition="39.0">
+      <Methods>
+        <Method name="update" returnType="void" visibility="public">
+          <Argument type="String" name="errorMessage"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="GUIUpdateObserver.GUIUpdate" target="GUIUpdateObserver.GUIUpdateObservable"/>
+    <UseRelation source="GUIUpdateObserver.GUIUpdateObservable" target="GUIUpdateObserver.GUIUpdateObserver" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="GUIUpdateObserver.GUIUpdate" target="GUIUpdateObserver.GUIUpdateObserver" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="GUIUpdateObserver.GUIUpdate" target="GUIUpdateObserver.GUIUpdate" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="updateInstance" source="GUIUpdateObserver.GUIUpdate" target="GUIUpdateObserver.GUIUpdate" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="errorObservers" source="GUIUpdateObserver.GUIUpdate" target="GUIUpdateObserver.GUIUpdateObserver" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;GUIUpdateObserver&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
