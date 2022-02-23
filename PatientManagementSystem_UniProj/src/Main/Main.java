@@ -33,7 +33,6 @@ public class Main {
         controller.setView(view);
         controller.addButtonHandler();
       
-        view.setVisible(true);        
-    }
-    
+        view.setVisible(true);      
+    }    
 }

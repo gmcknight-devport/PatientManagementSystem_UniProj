@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package LoginStrategiesModel;
+package LoginStrategies;
 
 /**
  * Interface for login strategies. Ensures methods are implemented to load next 

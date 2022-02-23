@@ -6,7 +6,7 @@
 package Controllers;
 
 import SystemServices.ServicesFacade;
-import LoginStrategiesModel.StrategySelect;
+import LoginStrategies.StrategySelect;
 import SystemServices.MedicineStock;
 import UserModel.UserFacade;
 import UserModel.UserTypes;

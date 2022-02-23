@@ -31,7 +31,7 @@ public class ServicesFacade {
         if (servicesFacadeInstance != null){
             throw new RuntimeException("This class is a singleton, use getInstance() to access");
         }
-        
+
         appointments.load();
         medicines.load();
         sortAppointments();

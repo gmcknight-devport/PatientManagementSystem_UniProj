@@ -6,7 +6,7 @@
 package Controllers;
 
 import GUIUpdateObserver.GUIUpdateObserver;
-import LoginStrategiesModel.StrategySelect;
+import LoginStrategies.StrategySelect;
 import SystemServices.ServicesFacade;
 import UserModel.UserFacade;
 import UserModel.UserTypes;

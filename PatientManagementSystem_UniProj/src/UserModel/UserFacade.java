@@ -55,7 +55,7 @@ public class UserFacade {
         if (userFacadeInstance != null){
             throw new RuntimeException("This class is a singleton, use getInstance() to access");
         }
-        
+       
         medicines.load();
         patient.load();       
         doctor.load();

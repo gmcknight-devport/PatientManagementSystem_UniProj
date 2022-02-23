@@ -7,7 +7,7 @@ package Controllers;
 
 import UserModel.UserFacade;
 import View.AdminGUI;
-import LoginStrategiesModel.StrategySelect;
+import LoginStrategies.StrategySelect;
 import UserModel.UserTypes;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

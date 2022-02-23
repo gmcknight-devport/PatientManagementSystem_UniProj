@@ -5,7 +5,7 @@
  */
 package Controllers;
 
-import LoginStrategiesModel.StrategySelect;
+import LoginStrategies.StrategySelect;
 import UserModel.UserFacade;
 import View.LoginGUI;
 import java.awt.event.ActionEvent;
@@ -177,8 +177,7 @@ public class LoginController implements IController{
         
         @Override
         public void windowClosing(WindowEvent e) {
-            userModel.saveAll();
-            System.out.println("Should be saved");
+            System.out.println("Should be closed");
         }
     }
     

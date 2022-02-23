@@ -5,9 +5,6 @@
  */
 package Controllers;
 
-import SystemServices.ServicesFacade;
-import UserModel.UserFacade;
-
 /**
  * Interface for the controllers. Ensures standard methods are implemented to 
  * set up controller
